@@ -7,9 +7,10 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #111;
-  background: #f7f7f7;
-}
+  /* Light text on dark background */
+  color: #eee;
+  background: #0b0b0b;
+} 
 
 /* HERO */
 .hero {
@@ -48,7 +49,7 @@ body {
 }
 
 .brand img {
-  height: 32px;
+  height: 102px; /* reducido a 0.8 (aprox) */
 }
 
 /* Botones */
@@ -59,31 +60,77 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+  z-index: 7; /* aseguramos que estén por encima del video */
 }
 
 .hero-actions a {
-  padding: 14px 36px;
-  border: 1px solid white;
+  padding: 20px 50px; /* increased 1.4x from 14x36 */
+  border-radius: 11px;
+  border: 1px solid rgba(255,255,255,0.18);
   color: white;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
+  font-size: 1.4rem; /* ~1.4x default size */
+  background: rgba(255,255,255,0.06); /* ligera capa translúcida */
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  backdrop-filter: blur(6px) saturate(120%); /* frosted glass */
+  box-shadow: 0 8px 22px rgba(0,0,0,0.38);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
 
 .hero-actions a:hover {
-  background: white;
+  background: rgba(255,255,255,0.92);
   color: #111;
+  transform: translateY(-4px);
 }
 
-/* Scroll indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  opacity: 0.6;
+/* Reduce intensity on small screens to avoid performance issues */
+@media (max-width: 480px) {
+  .hero-actions a {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255,255,255,0.10);
+    padding: 14px 40px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
 }
+
+/* TEXTO MINIMALISTA SOBRE EL HERO (centrado, en media altura) */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 8; /* por encima de los botones */
+  color: rgba(255, 255, 255, 0.98);
+  font-size: 3.2rem; /* tamaño duplicado */
+  font-weight: 500;
+  font-style: italic;
+  padding: 0 20px;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text p {
+  display: inline-block;
+  max-width: 1000px;
+  line-height: 1.15;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .hero-text { font-size: 2.7rem; }
+}
+
+@media (max-width: 600px) {
+  .hero-text { font-size: 1.95rem; }
+  .hero-actions { bottom: 70px; }
+}
+
+
 
 /* SECCIONES */
 section {
@@ -95,6 +142,70 @@ section {
 .contact h2 {
   margin-bottom: 40px;
   font-weight: 400;
+}
+
+/* TÍTULO UBICACIÓN: centrado y mayor jerarquía */
+.location h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 900px) {
+  .location h2 { font-size: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .location h2 { font-size: 1.6rem; }
+}
+
+/* Layout para mapa y descripción */
+.location-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.location-content .map {
+  flex: 0 0 70%; /* mapa ampliado ~1.4x (antes 50%) */
+}
+
+.location-content .map img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.location-desc {
+  flex: 1;
+  max-width: 30%;
+  color: #eee;
+  font-size: calc(1rem + 2pt); /* aumentado 2pt */
+  line-height: 1.6;
+}
+
+.location-desc h3 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.location-desc p {
+  margin-bottom: 12px;
+  color: #ddd;
+}
+
+@media (max-width: 900px) {
+  .location-content {
+    flex-direction: column;
+  }
+  .location-content .map,
+  .location-desc { flex-basis: 100%; max-width: 100%; }
+  .location-desc h3 { font-size: 1.4rem; }
 }
 
 .map img {
@@ -114,9 +225,13 @@ section {
 }
 
 /* CONTACTO */
+.contact {
+  background: #f7f7f7;
+  color: #111;
+}
 .contact p {
   margin-bottom: 10px;
-}
+} 
 
 /* MODELOS */
 .model-header {
@@ -130,8 +245,8 @@ section {
 
 .back-link {
   text-decoration: none;
-  color: #111;
-  opacity: 0.6;
+  color: #eee;
+  opacity: 0.8;
 }
 
 .back-link:hover {
@@ -259,6 +374,50 @@ section {
 .lightbox-close:hover {
   opacity: 1;
 }
+
+/* Botones prev/next */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 48px;
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2010;
+}
+
+.lightbox-nav.prev { left: 30px; }
+.lightbox-nav.next { right: 30px; }
+
+.lightbox-nav:hover { background: rgba(0,0,0,0.8); }
+
+/* Counter */
+.lightbox-counter {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.9);
+  font-size: 16px;
+  background: rgba(0,0,0,0.45);
+  padding: 6px 12px;
+  border-radius: 12px;
+  z-index: 2010;
+}
+
+@media (max-width: 600px) {
+  .lightbox-nav { width: 48px; height: 48px; font-size: 32px; }
+  .lightbox-close { font-size: 30px; right: 20px; top: 20px; }
+}
+
 
 /* Hamburguesa oscura en páginas de modelo */
 body.model-page .hamburger span {

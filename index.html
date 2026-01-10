@@ -19,7 +19,6 @@
 
     <div class="brand">
       <img src="images/logo-san-andres.svg" alt="San Andrés">
-      <span>San Andrés</span>
     </div>
 
     <!-- HAMBURGUESA -->
@@ -32,44 +31,58 @@
     <!-- MENÚ -->
     <nav class="mobile-menu" id="mobileMenu">
       <a href="index.html" class="page-link">Home</a>
-      <a href="modelo-a.html" class="page-link">Modelo A</a>
-      <a href="modelo-b.html" class="page-link">Modelo B</a>
-      <a href="modelo-c.html" class="page-link">Modelo C</a>
+      <a href="modelo-a.html" class="page-link">Vivienda A</a>
+      <a href="modelo-b.html" class="page-link">Vivienda B</a>
+      <a href="modelo-c.html" class="page-link">Vivienda C</a>
 
       <a href="#ubicacion">Ubicación</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
     <!-- BOTONES MODELOS -->
-    <div class="hero-actions">
-      <a href="modelo-a.html" class="page-link">Modelo A</a>
-      <a href="modelo-b.html" class="page-link">Modelo B</a>
-      <a href="modelo-c.html" class="page-link">Modelo C</a>
-
+    <!-- TEXTO MINIMALISTA SOBRE LOS BOTONES -->
+    <div class="hero-text">
+      <p>Terrenos con viviendas a elección.<br>Arquitectura pensada para habitar.</p>
     </div>
 
-    <div class="scroll-indicator">↓</div>
+    <div class="hero-actions">
+      <a href="modelo-a.html" class="page-link">Vivienda A</a>
+      <a href="modelo-b.html" class="page-link">Vivienda B</a>
+      <a href="modelo-c.html" class="page-link">Vivienda C</a>
+
+    </div>
 
   </header>
 
   <!-- ================= UBICACIÓN ================= -->
   <section class="location" id="ubicacion">
-    <h2>Ubicación</h2>
 
-    <div class="map">
-      <img src="images/ubicacion/mapa.jpg" alt="Mapa San Andrés" class="lightbox-item">
+    <div class="location-content">
+      <div class="map">
+        <img src="images/ubicacion/mapa.jpg" alt="Mapa San Andrés" class="lightbox-item">
+      </div>
+
+      <div class="location-desc">
+        <h3>Viví San Rafael, naturaleza y calidad de vida</h3>
+        <p>San Rafael, al sur de Mendoza, combina tranquilidad, paisajes únicos y una amplia oferta turística a pocos minutos del centro. A solo 30–40 minutos se encuentra el imponente Cañón del Atuel, junto a embalses como Los Reyunos (30 min), Valle Grande y El Nihuil (50–60 min), ideales para actividades náuticas, aventura y descanso.</p>
+        <p>La región también se destaca por su enoturismo, con bodegas y viñedos abiertos al público a pocos minutos de la ciudad, y por lugares históricos como Villa 25 de Mayo, a solo 25 minutos.</p>
+        <p>Invertir en San Rafael es elegir un entorno natural privilegiado, con servicios urbanos, turismo todo el año y una excelente calidad de vida.</p>
+      </div>
     </div>
 
-    <div class="location-gallery">
-      <img src="images/ubicacion/aerea-01.jpg" alt="Aérea 1" class="lightbox-item">
-      <img src="images/ubicacion/aerea-02.jpg" alt="Aérea 2" class="lightbox-item">
-      <img src="images/ubicacion/aerea-03.jpg" alt="Aérea 3" class="lightbox-item">
-    </div>
 
     <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
       <button class="lightbox-close" aria-label="Cerrar imagen">×</button>
+
+      <!-- Navegación prev/next -->
+      <button class="lightbox-nav prev" aria-label="Imagen anterior">‹</button>
+      <button class="lightbox-nav next" aria-label="Imagen siguiente">›</button>
+
       <img class="lightbox-img" src="" alt="Imagen ampliada">
+
+      <!-- Contador / caption -->
+      <div class="lightbox-counter" aria-hidden="true"></div>
     </div>
   </section>
 
