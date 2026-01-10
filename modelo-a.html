@@ -30,27 +30,33 @@
 
   <!-- HEADER -->
   <header class="model-header">
-    <a href="index.html" class="back-link">← Volver a San Andrés</a>
-    <h1>Modelo A</h1>
+    <h1>Vivienda A</h1>
   </header>
 
   <!-- GALERÍA -->
   <section class="model-gallery">
+    <div class="model-content">
+      <div class="model-preview" aria-hidden="false">
+        <img src="images/modelo-a/exterior-01.jpg" alt="Vista previa Modelo A" class="preview-img">
+      </div>
 
-    <img src="images/modelo-a/exterior-01.jpg" class="full lightbox-item" alt="Modelo A Exterior">
-    <img src="images/modelo-a/exterior-02.jpg" class="full lightbox-item" alt="Modelo A Exterior">
+      <aside class="model-info" aria-label="Descripción del Modelo A">
+        <p>Vivienda unifamiliar de 97 m² desarrollada sobre un terreno de 14 m de frente por 29 m de profundidad, con una distribución funcional y espacios pensados para el confort diario.</p>
 
-    <img src="images/modelo-a/interior-01.jpg" class="full lightbox-item" alt="Modelo A Interior">
-    <img src="images/modelo-a/interior-02.jpg" class="full lightbox-item" alt="Modelo A Interior">
-    <img src="images/modelo-a/interior-03.jpg" class="full lightbox-item" alt="Modelo A Interior">
+        <p>La propiedad cuenta con ingreso vehicular al frente y un hall de acceso que organiza la circulación hacia el interior. El área social se resuelve en un espacio abierto e integrado de living, comedor y cocina, favoreciendo la amplitud visual, la iluminación natural y la conexión entre los ambientes.</p>
 
-    <img src="images/modelo-a/planos.jpg" class="full lightbox-item" alt="Planos Modelo A">
+        <p>Dispone de baño de servicio, lavadero independiente y una clara separación entre el sector social y el sector privado. En el área íntima se desarrollan un dormitorio secundario, un baño principal completo y un dormitorio principal, ambos con dimensiones cómodas y buena ventilación.</p>
 
+        <p>La vivienda se implanta dejando amplios espacios exteriores, ideales para jardín y futuras ampliaciones, aportando calidad ambiental y versatilidad de uso.</p>
+
+        <p>Cuenta con todos los servicios disponibles, lo que la convierte en una opción lista para habitar, ideal tanto para vivienda permanente como inversión.</p>
+      </aside>
+    </div>
   </section>
 
   <!-- BOTÓN FINAL -->
   <div class="back-home">
-    <a href="index.html">← Volver al inicio</a>
+    <a href="index.html">Volver al inicio</a>
   </div>
 
   <!-- LIGHTBOX -->
@@ -59,8 +65,21 @@
     <img class="lightbox-img" id="lightboxImg" src="" alt="">
   </div>
 
+  <!-- LIGHTBOX MODELO A (GALERÍA) -->
+  <div id="modelLightbox" class="lightbox" role="dialog" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Cerrar imagen">×</button>
+
+    <!-- Navegación prev/next -->
+    <button class="lightbox-nav prev" aria-label="Imagen anterior">‹</button>
+    <button class="lightbox-nav next" aria-label="Imagen siguiente">›</button>
+
+    <img class="lightbox-img" src="" alt="Imagen ampliada">
+
+    <div class="lightbox-counter" aria-hidden="true"></div>
+  </div>
+
   <!-- JS -->
-  <script src="js/main.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>

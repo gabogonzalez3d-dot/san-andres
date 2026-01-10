@@ -9,38 +9,53 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body class="model-page">
 
-  <!-- HEADER SIMPLE -->
+  <!-- HEADER -->
   <header class="model-header">
-    <a href="index.html" class="back-link">← Volver a San Andrés</a>
-    <h1>Modelo B</h1>
+    <h1>Vivienda B</h1>
   </header>
 
   <!-- GALERÍA -->
   <section class="model-gallery">
+    <div class="model-content">
+      <div class="model-preview" aria-hidden="false">
+        <img src="images/modelo-b/exterior-01.jpg" alt="Vista previa Vivienda B" class="preview-img">
+      </div>
 
-  <!-- Exterior principal -->
-  <img src="images/modelo-b/exterior-01.jpg" class="full" alt="Modelo B Exterior">
+      <aside class="model-info" aria-label="Descripción del Modelo B">
+        <p>Vivienda unifamiliar de 97 m² desarrollada sobre un terreno de 14 m de frente por 29 m de profundidad, con una distribución funcional y espacios pensados para el confort diario.</p>
 
-  <!-- Segundo exterior -->
-  <img src="images/modelo-b/exterior-02.jpg" class="full" alt="Modelo B Exterior">
+        <p>La propiedad cuenta con ingreso vehicular al frente y un hall de acceso que organiza la circulación hacia el interior. El área social se resuelve en un espacio abierto e integrado de living, comedor y cocina, favoreciendo la amplitud visual, la iluminación natural y la conexión entre los ambientes.</p>
 
-  <!-- Interiores -->
-  <img src="images/modelo-b/interior-01.jpg" class="full" alt="Modelo B Interior">
-  <img src="images/modelo-b/interior-02.jpg" class="full" alt="Modelo B Interior">
-  <img src="images/modelo-b/interior-03.jpg" class="full" alt="Modelo B Interior">
-  </div>
+        <p>Dispone de baño de servicio, lavadero independiente y una clara separación entre el sector social y el sector privado. En el área íntima se desarrollan un dormitorio secundario, un baño principal completo y un dormitorio principal, ambos con dimensiones cómodas y buena ventilación.</p>
 
-  <!-- Planos -->
-  <img src="images/modelo-b/planos.jpg" class="full" alt="Planos Modelo B">
+        <p>La vivienda se implanta dejando amplios espacios exteriores, ideales para jardín y futuras ampliaciones, aportando calidad ambiental y versatilidad de uso.</p>
 
-</section>
+        <p>Cuenta con todos los servicios disponibles, lo que la convierte en una opción lista para habitar, ideal tanto para vivienda permanente como inversión.</p>
+      </aside>
+    </div>
+  </section>
 
   <!-- BOTÓN FINAL -->
   <div class="back-home">
-    <a href="index.html">← Volver al inicio</a>
+    <a href="index.html">Volver al inicio</a>
   </div>
+
+  <!-- LIGHTBOX MODELO (GALERÍA) -->
+  <div id="modelLightbox" class="lightbox" role="dialog" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Cerrar imagen">×</button>
+
+    <!-- Navegación prev/next -->
+    <button class="lightbox-nav prev" aria-label="Imagen anterior">‹</button>
+    <button class="lightbox-nav next" aria-label="Imagen siguiente">›</button>
+
+    <img class="lightbox-img" src="" alt="Imagen ampliada">
+
+    <div class="lightbox-counter" aria-hidden="true"></div>
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>

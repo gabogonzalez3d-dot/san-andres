@@ -7,10 +7,46 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  /* Light text on dark background */
-  color: #eee;
-  background: #0b0b0b;
-} 
+  /* Text color set to white site-wide */
+  color: #fff;
+  background-color: #0b0b0b;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* For model pages, ensure background image is used and no solid black blocks it */
+body.model-page {
+  background-color: transparent; /* allow image visibility */
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Ensure model page content does not block the background image */
+body.model-page, 
+body.model-page .model-header,
+body.model-page .model-gallery,
+body.model-page .model-content,
+body.model-page .model-preview,
+body.model-page .model-info,
+body.model-page .back-home {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Make sure HTML/body occupy full height so background fills */
+html, body { height: 100%; }
+
+/* Keep UI overlays (mobile menu, lightbox) as functional but non-blocking when closed */
+.mobile-menu { background: rgba(0,0,0,0.95); }
+.lightbox { background: rgba(0, 0, 0, 0.95); }
+
 
 /* HERO */
 .hero {
@@ -45,7 +81,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: white;
+  color: #fff;
 }
 
 .brand img {
@@ -67,7 +103,7 @@ body {
   padding: 20px 50px; /* increased 1.4x from 14x36 */
   border-radius: 11px;
   border: 1px solid rgba(255,255,255,0.18);
-  color: white;
+  color: #fff;
   text-decoration: none;
   letter-spacing: 1px;
   font-size: 1.4rem; /* ~1.4x default size */
@@ -80,7 +116,7 @@ body {
 
 .hero-actions a:hover {
   background: rgba(255,255,255,0.92);
-  color: #111;
+  color: #111; /* texto oscuro sobre fondo claro */
   transform: translateY(-4px);
 }
 
@@ -182,21 +218,30 @@ section {
 .location-desc {
   flex: 1;
   max-width: 30%;
-  color: #eee;
+  color: #fff;
   font-size: calc(1rem + 2pt); /* aumentado 2pt */
   line-height: 1.6;
+  font-weight: 300; /* texto más delgado */
 }
 
 .location-desc h3 {
   margin-top: 0;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: 600;
   margin-bottom: 12px;
 }
 
+/* Responsive adjustments for the location title */
+@media (max-width: 900px) {
+  .location-desc h3 { font-size: 1.8rem; }
+}
+@media (max-width: 600px) {
+  .location-desc h3 { font-size: 1.4rem; }
+}
+
 .location-desc p {
   margin-bottom: 12px;
-  color: #ddd;
+  color: #fff;
 }
 
 @media (max-width: 900px) {
@@ -209,25 +254,93 @@ section {
 }
 
 .map img {
-  width: 100%;
-  margin-bottom: 40px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .map img { width: 100%; }
 }
 
 .location-gallery {
+  margin-bottom: 40px;
+}
+
+.location-gallery h4 {
+  color: #eee;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.location-gallery .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
   margin-bottom: 60px;
 }
 
-.location-gallery img {
+.location-gallery img,
+.location-gallery .gallery-thumb {
   width: 100%;
+  display: block;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
+
+.location-gallery .gallery-thumb:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+}
+
+/* Lightbox counter for both lightboxes */
+.lightbox-counter {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.95);
+  font-size: 14px;
+  background: rgba(0,0,0,0.45);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
 
 /* CONTACTO */
 .contact {
-  background: #f7f7f7;
-  color: #111;
+  background: #111;
+  color: #fff;
+}
+.contact .contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.contact .contact-info {
+  flex: 1;
+}
+.contact .contact-logo img {
+  height: 128px; /* duplicado */
+  width: auto;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .contact .contact-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact .contact-logo {
+    align-self: flex-end;
+    margin-top: 12px;
+  }
+  .contact .contact-logo img { height: 96px; /* duplicado para móvil */ }
 }
 .contact p {
   margin-bottom: 10px;
@@ -239,8 +352,19 @@ section {
 }
 
 .model-header h1 {
-  font-weight: 400;
+  font-weight: 600;
   margin-top: 20px;
+  font-size: 3rem; /* aumentado */
+  text-align: center; /* centrado */
+  margin-bottom: 8px;
+  color: #000; /* título en negro */
+}
+
+@media (max-width: 900px) {
+  .model-header h1 { font-size: 2rem; }
+}
+@media (max-width: 600px) {
+  .model-header h1 { font-size: 1.6rem; }
 }
 
 .back-link {
@@ -257,9 +381,91 @@ section {
   padding: 0 8%;
 }
 
+/* Back to home button — centered and styled like home hero buttons */
+.back-home {
+  text-align: center;
+  margin: 40px 0 80px;
+}
+
+.back-home a {
+  display: inline-block;
+  padding: 18px 56px;
+  border-radius: 11px;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #000; /* texto en negro */
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  background: rgba(255,255,255,0.06);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.38);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.back-home a:hover {
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  transform: translateY(-4px);
+}
+
+@media (max-width: 480px) {
+  .back-home a {
+    padding: 12px 34px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+}
+
 .model-gallery .full {
   width: 100%;
   margin-bottom: 80px;
+}
+
+/* New layout: gallery + side description */
+.model-gallery .model-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between; /* asegurar que ocupen mitades */
+  margin-bottom: 40px;
+  flex-wrap: nowrap;
+} 
+
+
+/* Preview slideshow above the gallery — auto-advance on page before opening lightbox */
+.model-preview {
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.model-preview .preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .model-preview { flex: 0 0 100%; max-width: 100%; margin: 0 0 20px; }
+} 
+/* Descriptive text on model pages should be black for better contrast */
+body.model-page .model-gallery .model-info {
+  flex: 0 0 50%;
+  max-width: 50%;
+  color: #000;
+  font-size: calc(1rem + 2pt); /* aumentado 2 puntos */
+  line-height: 1.6;
+  padding-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .model-gallery .model-content { flex-direction: column; }
+  body.model-page .model-gallery .model-info { flex: 0 0 100%; max-width: 100%; }
 }
 
 .model-gallery .grid {
@@ -311,7 +517,7 @@ section {
 }
 
 .mobile-menu a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -366,13 +572,28 @@ section {
   top: 30px;
   right: 40px;
   font-size: 40px;
-  color: white;
+  color: #fff;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.9;
+  background: transparent; /* quitar fondo por defecto */
+  border: none;
+  padding: 6px 10px;
+  line-height: 1;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .lightbox-close:hover {
   opacity: 1;
+  background: transparent;
+}
+
+/* Estilo visible y accesible para teclado */
+.lightbox-close:focus {
+  outline: 2px solid rgba(255,255,255,0.32);
+  outline-offset: 3px;
+  background: transparent;
 }
 
 /* Botones prev/next */
@@ -382,7 +603,7 @@ section {
   transform: translateY(-50%);
   background: rgba(0,0,0,0.6);
   border: none;
-  color: white;
+  color: #fff;
   font-size: 48px;
   width: 64px;
   height: 64px;
@@ -405,7 +626,7 @@ section {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.95);
   font-size: 16px;
   background: rgba(0,0,0,0.45);
   padding: 6px 12px;

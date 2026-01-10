@@ -71,8 +71,35 @@
     </div>
 
 
+    <!-- GALERÍA DE UBICACIÓN -->
+    <div class="location-gallery" aria-label="Galería de ubicación">
+      <h4>Galería</h4>
+      <div class="gallery-grid">
+        <img src="images/ubicacion/vg1.jpg" alt="Vista general 1" class="gallery-thumb lightbox-item" data-index="0">
+        <img src="images/ubicacion/vg2.jpg" alt="Vista general 2" class="gallery-thumb lightbox-item" data-index="1">
+        <img src="images/ubicacion/lr1.jpg" alt="Los Reyunos 1" class="gallery-thumb lightbox-item" data-index="2">
+        <img src="images/ubicacion/lr2.jpg" alt="Los Reyunos 2" class="gallery-thumb lightbox-item" data-index="3">
+        <img src="images/ubicacion/en1.jpg" alt="El Nihuil 1" class="gallery-thumb lightbox-item" data-index="4">
+        <img src="images/ubicacion/en2.jpg" alt="El Nihuil 2" class="gallery-thumb lightbox-item" data-index="5">
+      </div>
+    </div>
+
     <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Cerrar imagen">×</button>
+
+      <!-- Navegación prev/next -->
+      <button class="lightbox-nav prev" aria-label="Imagen anterior">‹</button>
+      <button class="lightbox-nav next" aria-label="Imagen siguiente">›</button>
+
+      <img class="lightbox-img" src="" alt="Imagen ampliada">
+
+      <!-- Contador / caption -->
+      <div class="lightbox-counter" aria-hidden="true"></div>
+    </div>
+
+    <!-- LIGHTBOX GALERÍA (6 IMÁGENES) -->
+    <div id="galleryLightbox" class="lightbox" role="dialog" aria-hidden="true">
       <button class="lightbox-close" aria-label="Cerrar imagen">×</button>
 
       <!-- Navegación prev/next -->
@@ -88,10 +115,17 @@
 
   <!-- ================= CONTACTO ================= -->
   <section class="contact" id="contacto">
-    <h2>Contacto</h2>
-    <p>Dirección: Calle Ejemplo 123</p>
-    <p>Email: contacto@sanandres.com</p>
-    <p>Teléfono: +54 9 260 000000</p>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <h2>CONTACTO</h2>
+        <p>Dirección: Calle Ejemplo 123</p>
+        <p>Email: contacto@sanandres.com</p>
+        <p>Teléfono: +54 9 260 000000</p>
+      </div>
+      <div class="contact-logo" aria-hidden="false">
+        <img src="images/DSA%20LOGOS.svg" alt="DSA Logos">
+      </div>
+    </div>
   </section>
 
   <script src="script.js"></script>
