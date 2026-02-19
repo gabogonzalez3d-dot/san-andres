@@ -128,8 +128,48 @@ html, body { height: 100%; }
     background: rgba(255,255,255,0.10);
     padding: 14px 40px;
     font-size: 1rem;
-    border-radius: 10px;
   }
+}
+
+/* Availability buttons use same look as hero but are static */
+.availability-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Description text beneath the lot image */
+.availability-description {
+  margin-top: 2rem;
+  font-size: 1.8rem; /* even larger text */
+  color: #333;
+  max-width: 1200px; /* allow it to stretch wider */
+  width: 100%;
+  padding: 0 2rem; /* more horizontal space */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.availability-actions a {
+  padding: 20px 50px;
+  border-radius: 11px;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+  background: #000; /* black background */
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.38);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.availability-actions a:hover {
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  transform: translateY(-4px);
 }
 
 /* TEXTO MINIMALISTA SOBRE EL HERO (centrado, en media altura) */

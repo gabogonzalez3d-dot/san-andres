@@ -77,7 +77,7 @@ if (mapImg) {
     // abrir en la posición correspondiente (mapa.jpg)
     const idx = ubicacionImages.indexOf(mapImg.src.replace(location.origin + '/', ''));
     // Fallback: buscar por nombre de archivo
-    const nameIdx = ubicacionImages.findIndex(s => s.endsWith('mapa.jpg'));
+    const nameIdx = ubicacionImages.findIndex(s => s.endsWith('aerea-01.jpg'));
     openLightbox(nameIdx >= 0 ? nameIdx : 0);
   });
 }
