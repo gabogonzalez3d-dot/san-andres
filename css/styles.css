@@ -425,6 +425,9 @@ section {
 .back-home {
   text-align: center;
   margin: 40px 0 80px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .back-home a {
@@ -582,6 +585,19 @@ body.model-page .model-gallery .model-info {
   transform: rotate(-45deg) translateY(-9px);
 }
 
+/* En páginas de modelo: hamburguesa negra por defecto, blanca cuando está activa (X) */
+body.model-page .hamburger {
+  /* no change to position/size here */
+}
+
+body.model-page .hamburger span {
+  background: #111;
+}
+
+body.model-page .hamburger.active span {
+  background: #fff;
+}
+
 /* LIGHTBOX */
 .lightbox {
   position: fixed;
@@ -602,8 +618,8 @@ body.model-page .model-gallery .model-info {
 }
 
 .lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 95%;
+  max-height: 95%;
   object-fit: contain;
 }
 
@@ -687,8 +703,102 @@ body.model-page .hamburger span {
 
 .site-footer {
   text-align: center;
-  padding: 60px 20px;
+  padding: 12px 20px;
   font-size: 0.8rem;
   letter-spacing: 0.5px;
   color: rgba(255, 255, 255, 0.5);
 }
+
+/* Styles for the generic lightbox implemented in js/model.js */
+.sa-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.sa-lightbox-overlay.show {
+  display: flex;
+}
+
+.sa-lightbox-overlay .sa-lb-content {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.sa-lb-image {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+
+.sa-lb-caption {
+  color: #fff;
+  margin-top: 12px;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.sa-lb-close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sa-lb-prev,
+.sa-lb-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: #fff;
+  font-size: 44px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 50%;
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  backdrop-filter: blur(6px) saturate(120%);
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+
+.sa-lb-prev { left: 12px; }
+.sa-lb-next { right: 12px; }
+
+.sa-lb-prev:hover, .sa-lb-next:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-50%) scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .sa-lb-prev, .sa-lb-next { font-size: 30px; padding: 8px; }
+  .sa-lb-image { max-height: 70vh; }
+  .sa-lb-close { font-size: 28px; }
+}
+
+/* Large mode for preview images (e.g. PLANTA 2H.jpg) */
+.sa-lightbox-overlay.sa-lb--large .sa-lb-content {
+  max-width: 1600px;
+}
+.sa-lightbox-overlay.sa-lb--large .sa-lb-image {
+  max-width: 1600px;
+  width: 100%;
+  height: auto;
+}
+
+

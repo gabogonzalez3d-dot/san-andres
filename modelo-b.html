@@ -10,52 +10,79 @@
 </head>
 
 <body class="model-page">
+    <div class="brand">
+      <img src="images/logo-san-andres 2.svg" alt="San Andrés">
+    </div>
+
+  <!-- HAMBURGUESA -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- MENÚ MÓVIL -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="modelo-a.html">Vivienda A</a>
+    <a href="modelo-b.html">Vivienda B</a>
+    <a href="index.html#ubicacion">Ubicación</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
 
   <!-- HEADER -->
   <header class="model-header">
-    <h1>Vivienda B</h1>
+    <h1>VIVIENDA "B" - 122m²</h1>
   </header>
 
   <!-- GALERÍA -->
   <section class="model-gallery">
     <div class="model-content">
       <div class="model-preview" aria-hidden="false">
-        <img src="images/modelo-b/exterior-01.jpg" alt="Vista previa Vivienda B" class="preview-img">
+        <img src="images/modelo-b/PLANTA 3H.jpg" alt="Planta Modelo B" class="preview-img">
       </div>
 
-      <aside class="model-info" aria-label="Descripción del Modelo B">
-        <p>Vivienda unifamiliar de 97 m² desarrollada sobre un terreno de 14 m de frente por 29 m de profundidad, con una distribución funcional y espacios pensados para el confort diario.</p>
+      <aside class="model-info" style="font-size:1.1rem" aria-label="Descripción del Modelo B">
+        <p>La Vivienda B de 3 dormitorios y 122 m² está diseñada para familias que buscan mayor amplitud, privacidad y comodidad. Su distribución funcional incluye:</p>
 
-        <p>La propiedad cuenta con ingreso vehicular al frente y un hall de acceso que organiza la circulación hacia el interior. El área social se resuelve en un espacio abierto e integrado de living, comedor y cocina, favoreciendo la amplitud visual, la iluminación natural y la conexión entre los ambientes.</p>
+        <ul style="margin-left:2rem;">
+          <li>Dormitorio principal en suite, con baño privado y vestidor.</li>
+          <li>Baño principal completo para los dormitorios secundarios.</li>
+          <li>Baño de servicio estratégicamente ubicado en el sector diurno.</li>
+        </ul>
 
-        <p>Dispone de baño de servicio, lavadero independiente y una clara separación entre el sector social y el sector privado. En el área íntima se desarrollan un dormitorio secundario, un baño principal completo y un dormitorio principal, ambos con dimensiones cómodas y buena ventilación.</p>
+        <p>La excelente iluminación y ventilación natural garantizan ambientes luminosos y saludables, elevando la calidad de vida diaria.</p>
 
-        <p>La vivienda se implanta dejando amplios espacios exteriores, ideales para jardín y futuras ampliaciones, aportando calidad ambiental y versatilidad de uso.</p>
+        <p>En el exterior, ofrece espacio para cochera doble, jardines frontal y lateral, y un amplio patio trasero ideal para sumar pérgola, churrasquera y piscina.</p>
 
-        <p>Cuenta con todos los servicios disponibles, lo que la convierte en una opción lista para habitar, ideal tanto para vivienda permanente como inversión.</p>
+        <p>Un hogar pensado para disfrutar cada etapa de la vida con mayor confort y libertad.</p>
       </aside>
+    </div>
+   <div class="location-gallery" aria-label="Galería de ubicación">
+      <div class="gallery-grid">
+        <img src="images/modelo-b/SA 1.jpg" alt="Fachada" class="gallery-thumb lightbox-item" data-index="0">
+        <img src="images/modelo-b/SA 2.jpg" alt="Jardín lateral" class="gallery-thumb lightbox-item" data-index="1">
+        <img src="images/modelo-b/SA 3.jpg" alt="Estar comedor cocina" class="gallery-thumb lightbox-item" data-index="2">
+        <img src="images/modelo-b/SA 4.jpg" alt="Cocina comedor estar" class="gallery-thumb lightbox-item" data-index="3">
+        <img src="images/modelo-b/SA 5.jpg" alt="Dormitorio 1 & 2" class="gallery-thumb lightbox-item" data-index="4">
+        <img src="images/modelo-b/SA 6.jpg" alt="Baño" class="gallery-thumb lightbox-item" data-index="5">
+        <img src="images/modelo-b/SA 7.jpg" alt="Dormitorio Suite" class="gallery-thumb lightbox-item" data-index="6">
+        <img src="images/modelo-b/SA 8.jpg" alt="Closet & Baño" class="gallery-thumb lightbox-item" data-index="7">
+        <img src="images/modelo-b/SA 9.jpg" alt="Galeria" class="gallery-thumb lightbox-item" data-index="8">
+        <img src="images/modelo-b/SA 10.jpg" alt="Patio trasero" class="gallery-thumb lightbox-item" data-index="9">
+      </div>
     </div>
   </section>
 
   <!-- BOTÓN FINAL -->
   <div class="back-home">
     <a href="index.html">Volver al inicio</a>
+    <a href="index.html#contacto">Contactar</a>
   </div>
 
-  <!-- LIGHTBOX MODELO (GALERÍA) -->
-  <div id="modelLightbox" class="lightbox" role="dialog" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Cerrar imagen">×</button>
-
-    <!-- Navegación prev/next -->
-    <button class="lightbox-nav prev" aria-label="Imagen anterior">‹</button>
-    <button class="lightbox-nav next" aria-label="Imagen siguiente">›</button>
-
-    <img class="lightbox-img" src="" alt="Imagen ampliada">
-
-    <div class="lightbox-counter" aria-hidden="true"></div>
-  </div>
-
+  <!-- JS -->
   <script src="script.js"></script>
+  <script src="js/model.js"></script>
 
 </body>
 </html>
