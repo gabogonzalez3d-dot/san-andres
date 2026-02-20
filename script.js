@@ -249,7 +249,7 @@ if (location.pathname.includes('modelo-a.html')) {
   const MODEL_INTERVAL = 2000; // ms
 
   /* --- PAGE PREVIEW (autoplay before opening) --- */
-  const modelPreviewImg = document.querySelector('.model-preview .preview-img');
+  const modelPreviewImg = document.querySelector('.model-preview');
   let currentPreviewIndex = 0;
   let previewTimer = null;
   const PREVIEW_INTERVAL = 2000;
@@ -352,7 +352,7 @@ function initModelPage(folder) {
     `images/${folder}/planos.jpg`
   ];
 
-  const previewImg = document.querySelector('.model-preview .preview-img');
+  const previewImg = document.querySelector('.model-preview');
   const lightboxEl = document.getElementById('modelLightbox');
   const imgEl = lightboxEl ? lightboxEl.querySelector('.lightbox-img') : null;
   const closeBtn = lightboxEl ? lightboxEl.querySelector('.lightbox-close') : null;
